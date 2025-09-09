@@ -1,21 +1,33 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GoHeartFill } from "react-icons/go";
 import { HiShoppingBag } from "react-icons/hi2";
 import { IoSearchSharp } from "react-icons/io5"; 
-import { TbMenu2 } from "react-icons/tb";                        
+import { TbMenu2, TbMenu3 } from "react-icons/tb";                        
 
 const Navbar = () => {
 
-const [showMenu, setShowMenu] = useState(false)
+const [showMenu, setShowMenu] = useState(false);
+const [isScrolled, setIsScrolled] = useState(false);
+
 const toggleMenu = () =>{
     setShowMenu(!showMenu);
 }
+   
+    useEffect(()=> {
+        const handleScroll = ()=> {
 
+            setIsScrolled(window.scrollY > 10)
+        }
+        window.addEventListener('scroll', handleScroll);
+        return ()=> window.removeEventListener('scroll', handleScroll)
+
+    }, [])
+                                                                                                                                                   
   return (
-    <header className='bg-white fixed top-0 right-0 left-0'>
+    <header className={`bg-white fixed top-0 right-0 left-0 z-50 ${isScrolled ? 'drop-shadow-[0_4px_25px_rgba(0,0,0,0.1)]' : ''}`}>    
         <nav className='max-w-[1400px] mx-auto px-10 md:h-[14vh] h-[12vh] flex justify-between items-center bg-white'>
 
-            {/* logo */}
+            {/* logo */}                           
             <a href='#' className='text-3xl font-bold'>
                 Gr<span className='text-orange-500 uppercase'>o</span>cify
             </a>
@@ -52,14 +64,15 @@ const toggleMenu = () =>{
                 <a href='#'className='text-zinc-800 text-2xl'> 
                     <HiShoppingBag />                                                                                                                                                              
                 </a> 
+                {/* Hamburger  */}
                 <a href="#" className='text-zinc-800 text-3xl md:hidden' onClick={toggleMenu}>
-                    <TbMenu2 />                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                    {showMenu ? <TbMenu3 /> : <TbMenu2 />}
                 </a>                     
             </div>
 
             {/* Mobile Menu  */}
-            <ul className='flex  flex-col gap-y-15 items-center gap-x-15 bg-orange-500/50 backdrop-blur-xl
-             rounded-xl p-10 top-30 -left-full transform -translate-x-1/2 md:hidden absolute'>
+            <ul className={`flex  flex-col gap-y-15 items-center gap-x-15 bg-orange-500/15 backdrop-blur-xl shadow-xl
+             rounded-xl p-10 top-30 -left-full transform -translate-x-1/2 md:hidden absolute transition-all duration-500 ${showMenu ? 'left-1/2' : ""}`}>
                 <li>
                    <a href='#' className='font-semibold tracking-wider text-orange-500'>Home</a>
                 </li>
@@ -81,7 +94,7 @@ const toggleMenu = () =>{
                 </li>      
             </ul>              
         </nav>
-    </header>                                                                                                          
+    </header>                                                                                                                                                                                                                                                                                                                                            
   )
 }
 
