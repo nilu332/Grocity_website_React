@@ -3,6 +3,7 @@ import { GoHeartFill } from "react-icons/go";
 import { HiShoppingBag } from "react-icons/hi2";
 import { IoSearchSharp } from "react-icons/io5"; 
 import { TbMenu2, TbMenu3 } from "react-icons/tb";                        
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -28,9 +29,9 @@ const toggleMenu = () =>{
         <nav className='max-w-[1400px] mx-auto px-10 md:h-[14vh] h-[12vh] flex justify-between items-center bg-white'>
 
             {/* logo */}                           
-            <a href='#' className='text-3xl font-bold'>
+            <Link to='/' className='text-3xl font-bold'>
                 Gr<span className='text-orange-500 uppercase'>o</span>cify
-            </a>
+            </Link>
 
             {/* Desktop Menu */}
             <ul className='md:flex items-center gap-x-15 hidden'>
