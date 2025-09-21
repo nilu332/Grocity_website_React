@@ -19,10 +19,10 @@ const toggleMenu = () =>{
 
             setIsScrolled(window.scrollY > 10)
         }
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);               
         return ()=> window.removeEventListener('scroll', handleScroll)
-
-    }, [])
+                                                     
+    }, [])              
                                                                                                                                                    
   return (
     <header className={`bg-white fixed top-0 right-0 left-0 z-50 ${isScrolled ? 'drop-shadow-[0_4px_25px_rgba(0,0,0,0.1)]' : ''}`}>    
@@ -36,7 +36,7 @@ const toggleMenu = () =>{
             {/* Desktop Menu */}
             <ul className='md:flex items-center gap-x-15 hidden'>
                 <li>
-                   <a href='#' className='font-semibold tracking-wider text-orange-500'>Home</a>
+                   <a href='#' className='font-semibold tracking-wider text-orange-400'>Home</a>
                 </li>
                 <li>
                    <a href='#' className='font-semibold tracking-wider text-zinc-800 hover:text-orange-500'>About us</a>
