@@ -30,7 +30,7 @@ const toggleMenu = () =>{
 
             {/* logo */}                           
             <Link to='/' className='text-3xl font-bold'>
-                Gr<span className='text-orange-500 uppercase'>o</span>cify
+                Gr<span className='text-orange-400 uppercase'>o</span>cify
             </Link>
 
             {/* Desktop Menu */}
