@@ -30,7 +30,7 @@ const toggleMenu = () =>{
 
             {/* logo */}                           
             <Link to='/' className='text-3xl font-bold'>
-                Gr<span className='text-orange-400 uppercase'>o</span>cify
+                Gr<span className='text-orange-500 uppercase'>o</span>cify
             </Link>
 
             {/* Desktop Menu */}
@@ -39,7 +39,7 @@ const toggleMenu = () =>{
                    <a href='#' className='font-semibold tracking-wider text-orange-500'>Home</a>
                 </li>
                 <li>
-                   <a href='#' className='font-semibold tracking-wider text-zinc-800 hover:text-orange-500'>About us</a>
+                   <a href='#' className='font-semibold tracking-wider text-zinc-700 hover:text-orange-500'>About us</a>
                 </li>
                 <li>
                    <a href='#' className='font-semibold tracking-wider text-zinc-800 hover:text-orange-500'>Process</a>
