@@ -36,10 +36,10 @@ const toggleMenu = () =>{
             {/* Desktop Menu */}
             <ul className='md:flex items-center gap-x-15 hidden'>
                 <li>
-                   <a href='#' className='font-semibold tracking-wider text-orange-600'>Home</a>
+                   <a href='#' className='font-semibold tracking-wider text-orange-500'>Home</a>
                 </li>
                 <li>
-                   <a href='#' className='font-semibold tracking-wider text-zinc-700 hover:text-orange-500'>About us</a>
+                   <a href='#' className='font-semibold tracking-wider text-zinc-800 hover:text-orange-500'>About us</a>
                 </li>
                 <li>
                    <a href='#' className='font-semibold tracking-wider text-zinc-800 hover:text-orange-500'>Process</a>
